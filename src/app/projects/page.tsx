@@ -43,7 +43,7 @@ const projects: Project[] = [
     description:
       'Utility written in Rust for transferring files over Wi-Fi using a QR code.',
     link: {
-      href: 'https://github.com/mateoradman/swift-file',
+      href: 'https://github.com/mateoradman/swift_file',
       label: 'github.com',
     },
   },
