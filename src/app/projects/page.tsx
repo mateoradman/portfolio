@@ -56,6 +56,24 @@ const projects: Project[] = [
       label: 'github.com',
     },
   },
+  {
+    name: 'Django',
+    description:
+      'Code contributions to one of the most popular web frameworks in Python.',
+    link: {
+      href: 'https://github.com/django/django/commits/main/?author=mateoradman',
+      label: 'github.com',
+    },
+  },
+  {
+    name: 'FastAPI',
+    description:
+      'Discussion contributions to one of the most popular web frameworks in Python.',
+    link: {
+      href: 'https://github.com/fastapi/fastapi/discussions?discussions_q=mateoradman',
+      label: 'github.com',
+    },
+  },
 ]
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
