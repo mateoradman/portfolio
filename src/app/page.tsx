@@ -6,6 +6,8 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import logot3k from '@/images/logos/t3k.webp'
+import logoUtrecht from '@/images/logos/utrecht.png'
+import logoSoton from '@/images/logos/soton.png'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -153,6 +155,38 @@ function Resume() {
   )
 }
 
+function Education() {
+  let resume: Array<Role> = [
+    {
+      company: 'Utrecht University',
+      title: 'MSc Economic Geography',
+      logo: logoUtrecht,
+      start: '2019',
+      end: '2020',
+    },
+    {
+      company: 'University of Southampton',
+      title: 'BSc Politics and International Relations',
+      logo: logoSoton,
+      start: '2016',
+      end: '2019',
+    },
+  ]
+
+  return (
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Education</span>
+      </h2>
+      <ol className="mt-6 space-y-4">
+        {resume.map((role, roleIndex) => (
+          <Role key={roleIndex} role={role} />
+        ))}
+      </ol>
+    </div>
+  )
+}
 function Photos() {
   let rotations = ['rotate-6', '-rotate-6', 'rotate-6', 'rotate-6', '-rotate-6']
 
@@ -190,12 +224,12 @@ export default async function Home() {
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Mateo, a backend developer based in Croatia with a passion for
-            open-source software. At T3K.AI, I develop an AI-powered platform that
-            streamline forensic workflows for law enforcement. With many years of
-            professional experience, I've built everything from seamless file
-            transfer systems to advanced subtitle management tools. I'm
-            dedicated to pushing the boundaries of technology to solve
-            real-world problems and love contributing to the open-source
+            open-source software. At T3K.AI, I develop an AI-powered platform
+            that streamline forensic workflows for law enforcement. With many
+            years of professional experience, I've built everything from
+            seamless file transfer systems to advanced subtitle management
+            tools. I'm dedicated to pushing the boundaries of technology to
+            solve real-world problems and love contributing to the open-source
             community to drive innovation forward.
           </p>
           <div className="mt-6 flex gap-6">
@@ -214,8 +248,9 @@ export default async function Home() {
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto max-w-xl">
+        <div className="mx-auto flex max-w-xl flex-col space-y-8">
           <Resume />
+          <Education />
         </div>
       </Container>
     </>
